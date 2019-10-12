@@ -1,26 +1,26 @@
 import React, { Component } from "react";
 
 import "./App.scss";
-import "antd/dist/antd.css";
 
-import { Button } from "antd";
+import { Main } from "./pages";
+
+import { Header } from "./components";
 
 import { Router, Route } from "react-router-dom";
 
 import { history } from "./helpers";
 
-import { Header } from "./components";
-
 export class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header />
+
         <Router history={history}>
           <div>
-            <Route exact path="/" component={() => <div>Hello!</div>} />
+            <Route exact path="/" component={Main} />
           </div>
         </Router>
-        <Header />
       </div>
     );
   }

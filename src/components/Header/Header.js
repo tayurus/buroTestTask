@@ -34,10 +34,14 @@ export const Header = props => {
         </div>
 
         <div className={b("menu")}>
-          <Avatar style={{ backgroundColor: "#87d068" }} className={b("avatar")} icon="user" />
+          <Avatar
+            style={{ backgroundColor: "#87d068" }}
+            className={b("avatar")}
+            src="https://avatars3.githubusercontent.com/u/40214545?s=460&v=4"
+          />
           <Dropdown overlay={menu} trigger={["click"]}>
             <a className="ant-dropdown-link" href="#">
-              <div className={b("username")}>Андрей Голубев</div>
+              <div className={b("username")}>Юля Красивая</div>
               <Icon type="down" style={{ fontSize: "12px", color: "#fff", marginTop: "3px" }} />
             </a>
           </Dropdown>

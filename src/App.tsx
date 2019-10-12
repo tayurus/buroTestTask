@@ -20,7 +20,6 @@ export class App extends Component {
             <Route exact path="/" component={() => <div>Hello!</div>} />
           </div>
         </Router>
-
         <Header />
       </div>
     );

@@ -1,20 +1,25 @@
 import React, { Component } from "react";
 import { withNaming } from "@bem-react/classname";
 import { connect } from "react-redux";
-import { Breadcrumb, Button, Radio, Upload, Icon, Divider, Steps } from "antd";
+import { Breadcrumb, Button, Radio, Upload, Icon, Divider } from "antd";
 import "./Main.scss";
-import { Input } from "./../../components";
+import { Input, Steps } from "./../../components";
+import { formActions } from "./../../actions";
 
 const { Dragger } = Upload;
-const { Step } = Steps;
 
 const cn = withNaming({ n: "", e: "__", m: "_", v: "_" });
 const b = cn("main-page");
 
-class Main extends Component {
-  constructor(props: Object) {
+class Main extends Component<any> {
+  constructor(props: any) {
     super(props);
   }
+
+  // componentDidMount() {
+  //   const { dispatch } = this.props;
+  //   dispatch(formActions.changeStep());
+  // }
 
   renderNalogRadio = () => {
     return (
@@ -85,35 +90,50 @@ class Main extends Component {
   };
 
   renderAside = () => {
+    const { currentStep, isStepLoading, changeStep } = this.props;
+    console.log("main here, changeStep = ", changeStep);
+
+    const generateButton = (title: string) => {
+      return (
+        <React.Fragment>
+          <Button className={b("btn")} onClick={changeStep} disabled={isStepLoading ? true : false}>
+            {title}
+          </Button>
+          {isStepLoading ? <Icon type="loading" /> : ""}
+        </React.Fragment>
+      );
+    };
+
     const steps = [
       {
         title: "Заполнение",
-        description: "Описание"
+        subTitle: "Описание",
+        description: generateButton("Выпустить КЭП")
       },
       {
         title: "Выпуск КЭП",
-        description: "Описание"
+        subTitle: "Описание",
+        description: generateButton("Подписать")
       },
       {
         title: "Подписание",
-        description: "Описание"
+        subTitle: "Описание",
+        description: generateButton("Отправить в ФНС")
       },
       {
         title: "Отправка в ФНС",
-        description: "Описание"
+        subTitle: "Описание",
+        description: generateButton("Далее")
       },
       {
         title: "Регистрация в ФНС",
-        description: "Описание"
+        subTitle: "Описание",
+        description: generateButton("Далее")
       }
     ];
     return (
       <aside className={b("aside")}>
-        <Steps direction="vertical" size="small" current={0}>
-          {steps.map((stepData, key) => (
-            <Step title={stepData.title} description={stepData.description} />
-          ))}
-        </Steps>
+        <Steps currentStep={currentStep} steps={steps} />
       </aside>
     );
   };
@@ -154,11 +174,26 @@ class Main extends Component {
   }
 }
 
-function mapStateToProps(state: Object) {}
+function mapStateToProps(state: any) {
+  const { currentStep, isStepLoading } = state.form;
+  return {
+    currentStep,
+    isStepLoading
+  };
+}
+
+const mapDispatchToProps = (dispatch: Function) => {
+  return {
+    changeStep: () => {
+      dispatch(formActions.changeStep());
+      setTimeout(() => dispatch(formActions.stepLoaded()), 2000);
+    }
+  };
+};
 
 const connectedComponent = connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Main);
 
 export { connectedComponent as Main };

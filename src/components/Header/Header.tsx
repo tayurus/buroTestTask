@@ -19,7 +19,7 @@ const menu = (
   </Menu>
 );
 
-export const Header = props => {
+export const Header = (props: any) => {
   return (
     <header className={b()}>
       <div className={b("inner")}>

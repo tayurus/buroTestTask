@@ -1,0 +1,24 @@
+.site-steps {
+  .ant-steps-item-process .ant-steps-item-icon {
+    background-color: #0050b3 !important;
+    border: none !important;
+  }
+
+  .ant-steps-item {
+    padding-bottom: 10px;
+  }
+
+  .ant-steps-item-subtitle {
+    margin-left: 0;
+  }
+
+  .ant-steps-item-title {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ant-steps-item-active .ant-steps-item-tail::after {
+    background-color: #0050b3;
+    width: 2px !important;
+  }
+}

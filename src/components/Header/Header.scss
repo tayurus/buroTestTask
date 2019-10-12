@@ -1,0 +1,50 @@
+.site-header {
+  background-color: #0050b3;
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    .ant-dropdown-link.ant-dropdown-trigger {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__username {
+    color: #ffffff;
+  }
+
+  &__avatar {
+    margin-right: 8px;
+  }
+
+  &__save {
+    background: transparent;
+    border: none;
+    margin-right: 10px;
+  }
+
+  &__delete {
+    background: transparent;
+    border: none;
+  }
+
+  &__logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 322px;
+    width: 100%;
+  }
+}

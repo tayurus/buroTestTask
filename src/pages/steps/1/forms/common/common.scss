@@ -1,0 +1,63 @@
+.common-form {
+  &__files-title {
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 14px 0;
+  }
+
+  &__files {
+    width: 152px;
+  }
+
+  &__dragger {
+    margin-bottom: 13px;
+  }
+
+  &__inputs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 178px);
+    grid-gap: 13px;
+  }
+
+  &__radio-title {
+    display: block;
+    color: #262626;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+  }
+
+  &__section {
+    max-width: 560px;
+    width: 100%;
+  }
+
+  &__section-wrapper {
+    min-height: 300vh;
+    background-color: #fff;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    padding: 33px 40px 40px 40px;
+    border-radius: 4px;
+  }
+
+  .ant-upload-text {
+    color: #262626 !important;
+    font-family: Roboto;
+    font-size: 14px !important;
+  }
+
+  .ant-upload-hint {
+    color: #8c8c8c !important;
+    font-family: Roboto;
+    font-size: 12px !important;
+  }
+}

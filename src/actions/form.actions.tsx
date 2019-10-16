@@ -1,4 +1,4 @@
-import { formConstants } from "./../constants";
+import { formConstants } from "src/constants/index";
 
 export const formActions = {
   changeStep,

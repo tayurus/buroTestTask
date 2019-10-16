@@ -10,6 +10,7 @@
     "@types/react-dom": "^16.9.1",
     "@types/react-redux": "^7.1.4",
     "@types/react-router-dom": "^5.1.0",
+    "@types/redux-form": "^8.1.9",
     "@types/redux-logger": "^3.0.7",
     "antd": "^3.23.6",
     "history": "^4.7.2",
@@ -21,6 +22,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
     "redux": "^4.0.1",
+    "redux-form": "^8.2.6",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "typescript": "^3.6.4"
@@ -42,9 +44,6 @@
   ],
   "prettier": {
     "printWidth": 120,
-    "plugins": [
-      "stylelint-prettier"
-    ],
     "rules": {
       "block-closing-brace-newline-after": "always-multi-line",
       "block-closing-brace-empty-line-before": "never",
@@ -57,7 +56,17 @@
     }
   },
   "devDependencies": {
+    "prettier": "^1.18.2",
     "stylelint": "^11.1.1",
     "stylelint-prettier": "^1.1.1"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "./src"
+        ]
+      }
+    }
   }
 }

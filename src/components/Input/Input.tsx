@@ -18,7 +18,7 @@ export const Input = (props: Props) => {
   return (
     <div className={b()}>
       <label className={b("title")}>{title}</label>
-      <AntdInput size="large" />
+      <AntdInput size="large" {...props} />
       <span className={b("tip")}>{tip}</span>
     </div>
   );

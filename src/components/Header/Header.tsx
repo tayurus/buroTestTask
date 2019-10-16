@@ -11,10 +11,10 @@ const b = cn("site-header");
 const menu = (
   <Menu>
     <Menu.Item key="0">
-      <a href="http://www.alipay.com/">Личный кабинет</a>
+      <a href="#">Личный кабинет</a>
     </Menu.Item>
     <Menu.Item key="1">
-      <a href="http://www.taobao.com/">Выйти</a>
+      <a href="#">Выйти</a>
     </Menu.Item>
   </Menu>
 );

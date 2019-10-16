@@ -2,7 +2,7 @@ import React from "react";
 import { withNaming } from "@bem-react/classname";
 import "./Steps.scss";
 
-import { Steps as AntdSteps, Button } from "antd";
+import { Steps as AntdSteps } from "antd";
 const { Step } = AntdSteps;
 
 const cn = withNaming({ n: "", e: "__", m: "_", v: "_" });

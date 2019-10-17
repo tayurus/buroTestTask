@@ -22,7 +22,7 @@ export const AutoComplete = (props: Props) => {
       <label className={b("title")}>{title}</label>
       <AntdAutoComplete size="large" {...props}>
         {options.map(opt => (
-          <Option value={opt.val}>{opt.title}</Option>
+          <Option value={opt.value}>{opt.title}</Option>
         ))}
       </AntdAutoComplete>
       <span className={b("tip")}>{tip}</span>

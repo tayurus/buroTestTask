@@ -3,10 +3,12 @@ import { withNaming } from "@bem-react/classname";
 import { Radio, Upload, Icon } from "antd";
 import "./Common.scss";
 import { AInput, AAutoComplete } from "src/helpers";
-
+import { connect } from "react-redux";
 import { Field, reduxForm } from "redux-form";
 
 import validate from "./validate";
+
+import { formName } from "./constants";
 
 const { Dragger } = Upload;
 
@@ -67,7 +69,8 @@ class CommonForm extends Component<any> {
   };
 
   render() {
-    const { handleSubmit } = this.props;
+    const { handleSubmit, autoCompleteData } = this.props;
+    console.log("props = ", this.props);
 
     return (
       <form onSubmit={handleSubmit} className={b()}>
@@ -79,7 +82,7 @@ class CommonForm extends Component<any> {
                 title="Фамилия"
                 tip="обязательное поле!"
                 name="secondName"
-                options={[{ val: "shit", title: "shitTitle" }]}
+                options={autoCompleteData[formName + "secondName"] || []}
                 component={AAutoComplete}
               />
               <Field title="Имя" tip="обязательное поле!" name="firstName" component={AInput} />
@@ -101,9 +104,19 @@ class CommonForm extends Component<any> {
   }
 }
 
-const connectedComponent = reduxForm({
-  form: "s1common",
-  validate
-})(CommonForm);
+const mapStateToProps = (state: any) => {
+  const { autoCompleteData } = state.input;
+  return { autoCompleteData };
+};
+
+const connectedComponent = connect(
+  mapStateToProps,
+  null
+)(
+  reduxForm({
+    form: formName,
+    validate
+  })(CommonForm)
+);
 
 export { connectedComponent as CommonForm };

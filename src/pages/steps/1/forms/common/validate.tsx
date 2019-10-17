@@ -1,5 +1,9 @@
-// import { formActions } from "./../../actions";
+import { inputActions } from "src/actions";
+import { store } from "src/helpers";
+import { formName } from "./constants";
 
 export default function validate(values: any, dispatch: any): any {
-  // dispatch.dispatch(formActions.changeStep());
+  /* заберем из store название последнего  измененого inputа и узнаем, нужно ли грузить ему autocomlete варианты */
+  const { lastChangedField } = store.getState().input;
+  dispatch.dispatch(inputActions.loadAutoComplete(formName, lastChangedField));
 }

@@ -25,7 +25,7 @@ export function input(state = initialState, action: any) {
       const { form, inputName } = action;
       return {
         ...state,
-        autoCompleteData: { ...state.autoCompleteData, [form + inputName]: action.data }
+        autoCompleteData: { ...state.autoCompleteData, [form]: { [inputName]: action.data } }
       };
     }
 

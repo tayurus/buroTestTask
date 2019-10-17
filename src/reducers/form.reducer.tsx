@@ -6,7 +6,6 @@ const initialState = {
 };
 
 export function form(state = initialState, action: any) {
-  console.log("form reducer here, action = ", action);
   switch (action.type) {
     case formConstants.STEP_CHANGED:
       return {

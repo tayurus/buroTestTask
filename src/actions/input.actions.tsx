@@ -4,7 +4,6 @@ import { inputService } from "src/services";
 
 function loadAutoComplete(form: string, inputName: string) {
   return (dispatch: any) => {
-    console.log("loadAutoComplete action");
     dispatch(request());
 
     inputService.getAutoComplete().then(

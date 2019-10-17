@@ -71,7 +71,6 @@ class CommonForm extends Component<any> {
   render() {
     const { handleSubmit, autoCompleteData } = this.props;
     console.log("props = ", this.props);
-
     return (
       <form onSubmit={handleSubmit} className={b()}>
         <div className={b("section-wrapper")}>
@@ -82,7 +81,7 @@ class CommonForm extends Component<any> {
                 title="Фамилия"
                 tip="обязательное поле!"
                 name="secondName"
-                options={autoCompleteData[formName + "secondName"] || []}
+                options={autoCompleteData["secondName"] || []}
                 component={AAutoComplete}
               />
               <Field title="Имя" tip="обязательное поле!" name="firstName" component={AInput} />
@@ -105,7 +104,7 @@ class CommonForm extends Component<any> {
 }
 
 const mapStateToProps = (state: any) => {
-  const { autoCompleteData } = state.input;
+  const autoCompleteData = state.input.autoCompleteData[formName] || {};
   return { autoCompleteData };
 };
 

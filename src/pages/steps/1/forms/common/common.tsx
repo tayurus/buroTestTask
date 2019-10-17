@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withNaming } from "@bem-react/classname";
 import { Radio, Upload, Icon } from "antd";
 import "./Common.scss";
-import { AInput } from "src/helpers";
+import { AInput, AAutoComplete } from "src/helpers";
 
 import { Field, reduxForm } from "redux-form";
 
@@ -75,7 +75,13 @@ class CommonForm extends Component<any> {
           <section className={b("section")}>
             <h2 className={b("title")}>Контакты и общая информация</h2>
             <div className={b("inputs-grid")}>
-              <Field title="Фамилия" tip="обязательное поле!" name="secondName" component={AInput} />
+              <Field
+                title="Фамилия"
+                tip="обязательное поле!"
+                name="secondName"
+                options={[{ val: "shit", title: "shitTitle" }]}
+                component={AAutoComplete}
+              />
               <Field title="Имя" tip="обязательное поле!" name="firstName" component={AInput} />
               <Field title="Отчество" tip="обязательное поле!" name="patronymic" component={AInput} />
               <Field title="Номер телефона" tip="обязательное поле!" name="phone" component={AInput} />

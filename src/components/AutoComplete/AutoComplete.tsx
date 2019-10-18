@@ -21,7 +21,13 @@ export const AutoComplete = (props: Props) => {
   return (
     <div className={b()}>
       <label className={b("title")}>{title}</label>
-      <AntdAutoComplete size="large" {...props}>
+      <AntdAutoComplete
+        size="large"
+        {...props}
+        filterOption={(inputValue, option: any) =>
+          option.props.children.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+        }
+      >
         {options.map(opt => (
           <Option value={opt.value}>{opt.title}</Option>
         ))}

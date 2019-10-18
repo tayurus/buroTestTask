@@ -1,17 +1,15 @@
 import React, { Component } from "react";
 import { withNaming } from "@bem-react/classname";
-import { Radio, Upload, Icon } from "antd";
 import "./Common.scss";
-import { AInput, AAutoComplete, ADragger } from "src/helpers";
+import { AInput, AAutoComplete, ADragger, ARadio, ARadioGroup } from "src/helpers";
 import { connect } from "react-redux";
 import { Field, reduxForm } from "redux-form";
+import { Radio } from "antd";
 
 import validate from "./validate";
 import warn from "./warn";
 
 import { formName } from "./constants";
-
-const { Dragger } = Upload;
 
 const cn = withNaming({ n: "", e: "__", m: "_", v: "_" });
 const b = cn("common-form");
@@ -23,10 +21,12 @@ class CommonForm extends Component<any> {
 
   renderNalogRadio = () => {
     return (
-      <Radio.Group>
-        <Radio value={"osno"}>ОСНО</Radio>
-        <Radio value={"usn"}>УСН (Доходы)</Radio>
-      </Radio.Group>
+      <div>
+        <Field name="q" component={ARadioGroup} buttonStyle="solid">
+          <Field type="radio" name="q" value="osno" title="ОСНО" component={ARadio} />
+          <Field type="radio" name="q" value="usn" title="УСН (Доходы)" component={ARadio} />
+        </Field>
+      </div>
     );
   };
 

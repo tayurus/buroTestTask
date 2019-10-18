@@ -12,10 +12,12 @@ interface Props {
   title: string;
   tip: string;
   options: Array<any>;
+  meta: any;
 }
 
 export const Select = (props: Props) => {
-  const { title, tip, options } = props;
+  const { title, tip, options, meta } = props;
+  const { touched, error, warning } = meta;
 
   return (
     <div className={b()}>
@@ -26,6 +28,9 @@ export const Select = (props: Props) => {
         ))}
       </AntdSelect>
       <span className={b("tip")}>{tip}</span>
+      {touched &&
+        ((error && <span className={b("error")}>{error}</span>) ||
+          (warning && <span className={b("warning")}>{warning}</span>))}
     </div>
   );
 };

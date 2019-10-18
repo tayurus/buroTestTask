@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import { withNaming } from "@bem-react/classname";
 import { Radio, Upload, Icon } from "antd";
 import "./Common.scss";
-import { AInput, AAutoComplete } from "src/helpers";
+import { AInput, AAutoComplete, ADragger } from "src/helpers";
 import { connect } from "react-redux";
 import { Field, reduxForm } from "redux-form";
 
 import validate from "./validate";
+import warn from "./warn";
 
 import { formName } from "./constants";
 
@@ -36,33 +37,13 @@ class CommonForm extends Component<any> {
           Загрузка <br /> документов
         </h3>
         <div className={b("dragger")}>
-          <Dragger>
-            <p className="ant-upload-drag-icon">
-              <Icon type="inbox" />
-            </p>
-            <p className="ant-upload-text">Скан паспорта</p>
-            <p className="ant-upload-hint">Перетяните файлы в эту область </p>
-          </Dragger>
+          <Field title="Скан паспорта" tip="Перетяните файлы в эту область" name="passport" component={ADragger} />
         </div>
-
         <div className={b("dragger")}>
-          <Dragger>
-            <p className="ant-upload-drag-icon">
-              <Icon type="inbox" />
-            </p>
-            <p className="ant-upload-text">Скан прописки</p>
-            <p className="ant-upload-hint">Перетяните файлы в эту область </p>
-          </Dragger>
+          <Field title="Скан прописки" tip="Перетяните файлы в эту область" name="registration" component={ADragger} />
         </div>
-
         <div className={b("dragger")}>
-          <Dragger>
-            <p className="ant-upload-drag-icon">
-              <Icon type="inbox" />
-            </p>
-            <p className="ant-upload-text">Скан СНИЛС</p>
-            <p className="ant-upload-hint">Перетяните файлы в эту область </p>
-          </Dragger>
+          <Field title="Скан СНИЛС" tip="Перетяните файлы в эту область" name="SNILS" component={ADragger} />
         </div>
       </div>
     );
@@ -114,7 +95,8 @@ const connectedComponent = connect(
 )(
   reduxForm({
     form: formName,
-    validate
+    validate,
+    warn
   })(CommonForm)
 );
 

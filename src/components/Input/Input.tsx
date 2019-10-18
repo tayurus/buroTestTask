@@ -10,16 +10,20 @@ const b = cn("site-input");
 interface Props {
   title: string;
   tip: string;
+  meta: any;
 }
 
 export const Input = (props: Props) => {
-  const { title, tip } = props;
-
+  const { title, tip, meta } = props;
+  const { touched, error, warning } = meta;
   return (
     <div className={b()}>
       <label className={b("title")}>{title}</label>
       <AntdInput size="large" {...props} />
       <span className={b("tip")}>{tip}</span>
+      {touched &&
+        ((error && <span className={b("error")}>{error}</span>) ||
+          (warning && <span className={b("warning")}>{warning}</span>))}
     </div>
   );
 };

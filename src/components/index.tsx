@@ -4,3 +4,4 @@ export * from "./Steps/Steps";
 export * from "./Breadcrumbs/Breadcrumbs";
 export * from "./Select/Select";
 export * from "./AutoComplete/AutoComplete";
+export * from "./Dragger/Dragger";

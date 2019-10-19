@@ -12,7 +12,7 @@ import { formName } from "./constants";
 
 const cn = withNaming({ n: "", e: "__", m: "_", v: "_" });
 const sf = cn("site-form");
-const ff = cn("file-form");
+const b = cn("file-form");
 
 class FilesForm extends Component<any> {
   constructor(props: any) {
@@ -23,7 +23,7 @@ class FilesForm extends Component<any> {
     const { handleSubmit } = this.props;
 
     return (
-      <form onSubmit={handleSubmit} className={`${sf()} ${ff()}`}>
+      <form onSubmit={handleSubmit} className={`${sf()} ${b()}`}>
         <div className={sf("files")}>
           <h3 className={sf("files-title")}>
             Загрузка <br /> документов

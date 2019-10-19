@@ -11,8 +11,8 @@ import warn from "./warn";
 import { formName } from "./constants";
 
 const cn = withNaming({ n: "", e: "__", m: "_", v: "_" });
-const cf = cn("common-form");
 const sf = cn("site-form");
+const b = cn("common-form");
 
 class CommonForm extends Component<any> {
   constructor(props: any) {
@@ -33,7 +33,7 @@ class CommonForm extends Component<any> {
   render() {
     const { handleSubmit, autoCompleteData } = this.props;
     return (
-      <form onSubmit={handleSubmit} className={`${sf()} ${cf()}`}>
+      <form onSubmit={handleSubmit} className={`${sf()} ${b()}`}>
         <div className={sf("section-wrapper")}>
           <section className={sf("section")}>
             <h2 className={sf("title")}>Контакты и общая информация</h2>

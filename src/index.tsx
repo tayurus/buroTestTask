@@ -6,13 +6,21 @@ import * as serviceWorker from "./serviceWorker";
 
 import { Provider } from "react-redux";
 
+import { LocaleProvider } from "antd";
+import ru_RU from "antd/es/locale-provider/ru_RU";
+import moment from "moment";
+import "moment/locale/ru";
+
 import { store } from "./helpers";
 import { App } from "./App";
+moment.locale("ru");
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <LocaleProvider locale={ru_RU}>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </LocaleProvider>,
   document.getElementById("root")
 );
 

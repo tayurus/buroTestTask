@@ -1,2 +1,17 @@
 .registration-form {
+  &__address {
+    grid-column: 1 / 4;
+  }
+
+  &__districtName {
+    grid-column: 2 / 4;
+  }
+
+  &__localityName {
+    grid-column: 2 / 4;
+  }
+
+  &__streetName {
+    grid-column: 2 / 4;
+  }
 }

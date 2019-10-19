@@ -4,7 +4,6 @@ import "./Common.scss";
 import { AInput, AAutoComplete, ADragger, ARadio, ARadioGroup } from "src/helpers";
 import { connect } from "react-redux";
 import { Field, reduxForm } from "redux-form";
-import { Radio } from "antd";
 
 import validate from "./validate";
 import warn from "./warn";
@@ -12,7 +11,8 @@ import warn from "./warn";
 import { formName } from "./constants";
 
 const cn = withNaming({ n: "", e: "__", m: "_", v: "_" });
-const b = cn("common-form");
+const cf = cn("common-form");
+const sf = cn("site-form");
 
 class CommonForm extends Component<any> {
   constructor(props: any) {
@@ -23,41 +23,21 @@ class CommonForm extends Component<any> {
     return (
       <div>
         <Field name="q" component={ARadioGroup} buttonStyle="solid">
-          <Field type="radio" name="q" value="osno" title="ОСНО" component={ARadio} />
-          <Field type="radio" name="q" value="usn" title="УСН (Доходы)" component={ARadio} />
+          <Field type="radio" name="taxMode" value="osno" title="ОСНО" component={ARadio} />
+          <Field type="radio" name="taxMode" value="usn" title="УСН (Доходы)" component={ARadio} />
         </Field>
-      </div>
-    );
-  };
-
-  renderFileInputs = () => {
-    return (
-      <div className={b("files")}>
-        <h3 className={b("files-title")}>
-          Загрузка <br /> документов
-        </h3>
-        <div className={b("dragger")}>
-          <Field title="Скан паспорта" tip="Перетяните файлы в эту область" name="passport" component={ADragger} />
-        </div>
-        <div className={b("dragger")}>
-          <Field title="Скан прописки" tip="Перетяните файлы в эту область" name="registration" component={ADragger} />
-        </div>
-        <div className={b("dragger")}>
-          <Field title="Скан СНИЛС" tip="Перетяните файлы в эту область" name="SNILS" component={ADragger} />
-        </div>
       </div>
     );
   };
 
   render() {
     const { handleSubmit, autoCompleteData } = this.props;
-    console.log("props = ", this.props);
     return (
-      <form onSubmit={handleSubmit} className={b()}>
-        <div className={b("section-wrapper")}>
-          <section className={b("section")}>
-            <h2 className={b("title")}>Контакты и общая информация</h2>
-            <div className={b("inputs-grid")}>
+      <form onSubmit={handleSubmit} className={`${sf()} ${cf()}`}>
+        <div className={sf("section-wrapper")}>
+          <section className={sf("section")}>
+            <h2 className={sf("title")}>Контакты и общая информация</h2>
+            <div className={sf("inputs-grid")}>
               <Field
                 title="Фамилия"
                 tip="обязательное поле!"
@@ -71,13 +51,11 @@ class CommonForm extends Component<any> {
               <Field title="Электронная почта" tip="обязательное поле!" name="email" component={AInput} />
             </div>
 
-            <div className={b("radio")}>
-              <label className={b("radio-title")}>Налоговый режим</label>
+            <div className={sf("radio")}>
+              <label className={sf("radio-title")}>Налоговый режим</label>
               {this.renderNalogRadio()}
             </div>
           </section>
-
-          {this.renderFileInputs()}
         </div>
       </form>
     );

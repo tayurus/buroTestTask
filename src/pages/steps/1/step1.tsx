@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withNaming } from "@bem-react/classname";
 import { Divider } from "antd";
 
-import { CommonForm } from "./forms/Common/Common";
+import { CommonForm, PassportForm, FilesForm } from "./forms";
 
 const cn = withNaming({ n: "", e: "__", m: "_", v: "_" });
 const b = cn("site-step");
@@ -14,9 +14,14 @@ export class Step1 extends Component<any> {
 
   render() {
     return (
-      <div className={b()}>
-        <CommonForm />
-        <Divider />
+      <div className={b({ "1": true })}>
+        <div className={b("forms")}>
+          <CommonForm />
+          <Divider />
+          <PassportForm />
+          <Divider />
+        </div>
+        <FilesForm />
       </div>
     );
   }

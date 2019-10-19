@@ -1,0 +1,18 @@
+.site-step {
+  background-color: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 33px 40px 40px 40px;
+  border-radius: 4px;
+
+  &_1 {
+    display: flex;
+  }
+
+  &__forms {
+    max-width: 560px;
+    width: 100%;
+  }
+}

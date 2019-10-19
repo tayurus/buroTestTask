@@ -3,7 +3,7 @@
 Взято отсюда - https://codesandbox.io/s/jzyl70wpk
 */
 import React from "react";
-import { Input, Select, AutoComplete, Dragger, Radio, RadioGroup } from "src/components";
+import { Input, Select, AutoComplete, Dragger, Radio, RadioGroup, DatePicker, TextArea } from "src/components";
 
 const makeField = (Component: any) => ({ input, meta, children, hasFeedback, label, ...rest }: any) => {
   return <Component {...input} {...rest} meta={meta} children={children} />;
@@ -15,3 +15,5 @@ export const ASelect = makeField(Select);
 export const ADragger = makeField(Dragger);
 export const ARadio = makeField(Radio);
 export const ARadioGroup = makeField(RadioGroup);
+export const ADatePicker = makeField(DatePicker);
+export const ATextArea = makeField(TextArea);

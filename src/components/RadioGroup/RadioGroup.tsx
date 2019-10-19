@@ -9,15 +9,17 @@ const b = cn("site-radio");
 
 interface Props {
   name: string;
+  title: string;
   children: any;
 }
 
 export const RadioGroup = (props: Props) => {
-  const { name } = props;
+  const { name, title } = props;
 
   return (
     <div className={b()}>
       <AntdRadio.Group name={name} {...props}>
+        {title && <div>{title}</div>}
         {props.children}
       </AntdRadio.Group>
     </div>

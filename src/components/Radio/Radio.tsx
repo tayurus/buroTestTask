@@ -12,16 +12,24 @@ interface Props {
   title: string;
   name: string;
   meta: any;
+  isButton: boolean;
 }
 
 export const Radio = (props: Props) => {
-  const { title, value, name, meta } = props;
+  const { title, value, name, meta, isButton } = props;
   const { touched, error, warning } = meta;
   return (
     <div className={b()}>
-      <AntdRadio value={value} name={name} {...props}>
-        {title}
-      </AntdRadio>
+      {isButton ? (
+        <AntdRadio.Button value={value} name={name} {...props}>
+          {title}
+        </AntdRadio.Button>
+      ) : (
+        <AntdRadio value={value} name={name} {...props}>
+          {title}
+        </AntdRadio>
+      )}
+
       {touched &&
         ((error && <span className={b("error")}>{error}</span>) ||
           (warning && <span className={b("warning")}>{warning}</span>))}

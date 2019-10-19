@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { withNaming } from "@bem-react/classname";
 import "./Main.scss";
+import "./../steps/Steps.scss";
+
+import "./../steps/1/forms/Forms.scss";
 import { Steps, Breadcrumbs } from "src/components";
-import { formActions } from "src/actions";
 import { connect } from "react-redux";
 import { Step1 } from "src/pages/steps";
 import { Button, Icon } from "antd";

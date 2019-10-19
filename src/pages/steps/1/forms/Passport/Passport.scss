@@ -1,0 +1,19 @@
+.passport-form {
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__getSource {
+    grid-column: 1/4;
+
+    textarea {
+      height: 40px !important;
+    }
+  }
+
+  &__bornPlace {
+    grid-column: 2 / 4;
+  }
+}

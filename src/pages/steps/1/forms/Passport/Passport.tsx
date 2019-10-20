@@ -27,25 +27,23 @@ class PassportForm extends Component<any> {
           <section className={sf("section")}>
             <div className={b("row")}>
               <h2 className={sf("title")}>Паспорт</h2>
-              <Field name="citizenship" component={ARadioGroup}>
-                <div className={b("row")}>
-                  <Field
-                    type="radio"
-                    name="citizenship"
-                    isButton={true}
-                    value="RF"
-                    title="Гражданин РФ"
-                    component={ARadio}
-                  />
-                  <Field
-                    type="radio"
-                    name="citizenship"
-                    isButton={true}
-                    value="FOREIGN"
-                    title="Иностранный гражданин"
-                    component={ARadio}
-                  />
-                </div>
+              <Field name="citizenship" component={ARadioGroup} buttonStyle="solid">
+                <Field
+                  type="radio"
+                  name="citizenship"
+                  isButton={true}
+                  value="RF"
+                  title="Гражданин РФ"
+                  component={ARadio}
+                />
+                <Field
+                  type="radio"
+                  name="citizenship"
+                  isButton={true}
+                  value="FOREIGN"
+                  title="Иностранный гражданин"
+                  component={ARadio}
+                />
               </Field>
             </div>
 
@@ -103,6 +101,7 @@ const connectedComponent = connect(
 )(
   reduxForm({
     form: formName,
+    initialValues: { citizenship: "RF", sex: "male" },
     validate,
     warn
   })(PassportForm)

@@ -14,7 +14,7 @@ const b = cn("main-page");
 
 const breadcrumbsData = {
   backLabel: "Назад в панель управления",
-  items: [{ text: "Регистрация в ФНС", href: "#" }, { text: "Регистрация ООО" }]
+  items: [{ text: "Регистрация в ФНС", href: "#" }, { text: "Регистрация ИП" }]
 };
 
 class Main extends Component<any> {

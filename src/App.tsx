@@ -4,7 +4,7 @@ import "./App.scss";
 
 import { Main } from "./pages";
 
-import { Header } from "./components";
+import { Header, Footer } from "./components";
 
 import { Router, Route } from "react-router-dom";
 
@@ -21,6 +21,8 @@ export class App extends Component {
             <Route exact path="/" component={Main} />
           </div>
         </Router>
+
+        <Footer />
       </div>
     );
   }

@@ -8,7 +8,7 @@ import { Menu, Dropdown, Icon, Button, Avatar } from "antd";
 const cn = withNaming({ n: "", e: "__", m: "_", v: "_" });
 const b = cn("site-header");
 
-const menu = (
+const userMenu = (
   <Menu>
     <Menu.Item key="0">
       <a href="#">Личный кабинет</a>
@@ -19,17 +19,33 @@ const menu = (
   </Menu>
 );
 
+const formMenu = (
+  <Menu>
+    <Menu.Item key="0">
+      <a href="#">Копировать</a>
+    </Menu.Item>
+    <Menu.Item key="1">
+      <a href="#">Удалить</a>
+    </Menu.Item>
+  </Menu>
+);
+
 export const Header = (props: any) => {
   return (
     <header className={b()}>
       <div className={b("inner")}>
         <div className={b("logo-wrapper")}>
           <img src={logo} />
+
           <div>
             <Button size="small" className={b("save")}>
               Сохранить
             </Button>
-            <Button icon="delete" className={b("delete")} />
+            <Dropdown overlay={formMenu} trigger={["click"]}>
+              <a className="ant-dropdown-link" href="#">
+                <Icon type="more" style={{ fontSize: "16px", color: "#000" }} />
+              </a>
+            </Dropdown>
           </div>
         </div>
 
@@ -39,10 +55,10 @@ export const Header = (props: any) => {
             className={b("avatar")}
             src="https://avatars3.githubusercontent.com/u/40214545?s=460&v=4"
           />
-          <Dropdown overlay={menu} trigger={["click"]}>
+          <Dropdown overlay={userMenu} trigger={["click"]}>
             <a className="ant-dropdown-link" href="#">
               <div className={b("username")}>Юля Красивая</div>
-              <Icon type="down" style={{ fontSize: "12px", color: "#fff", marginTop: "3px" }} />
+              <Icon type="down" style={{ fontSize: "12px", color: "#000", marginTop: "3px", marginLeft: "5px" }} />
             </a>
           </Dropdown>
         </div>

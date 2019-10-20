@@ -1,5 +1,6 @@
 export * from "./Header/Header";
 export * from "./Input/Input";
+export * from "./InputNumber/InputNumber";
 export * from "./Steps/Steps";
 export * from "./Breadcrumbs/Breadcrumbs";
 export * from "./Select/Select";

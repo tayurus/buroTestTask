@@ -1,0 +1,38 @@
+.activity-form {
+  &__OKVED-btn {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__tip {
+    background: #fffbe6;
+    border: 1px solid #ffe58f;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 12px 18px;
+    margin-bottom: 10px;
+  }
+
+  &__tip-star {
+    width: 15px;
+    height: 14px;
+    background: url("/images/star-filled.svg") no-repeat center / contain;
+    margin-right: 12px;
+  }
+
+  &__tip-text {
+    font-size: 14px;
+    color: #595959;
+  }
+
+  &__selected-activity {
+    margin-bottom: 30px;
+  }
+
+  &__additional-activities {
+    .activity-option {
+      margin-bottom: 10px;
+    }
+  }
+}

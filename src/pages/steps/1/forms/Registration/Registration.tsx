@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withNaming } from "@bem-react/classname";
 import "./Registration.scss";
-import { AInput, AAutoComplete, ADatePicker, ARadio, ARadioGroup, ATextArea } from "src/helpers";
+import { AInput } from "src/helpers";
 import { Icon } from "antd";
 import { connect } from "react-redux";
 import { Field, reduxForm } from "redux-form";

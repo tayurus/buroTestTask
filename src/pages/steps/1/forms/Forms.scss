@@ -33,6 +33,14 @@
     margin: 0 0 20px 0;
   }
 
+  &__subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
   .ant-upload-text {
     color: #262626 !important;
     font-family: Roboto;

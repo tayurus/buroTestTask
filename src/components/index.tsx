@@ -9,3 +9,4 @@ export * from "./Radio/Radio";
 export * from "./RadioGroup/RadioGroup";
 export * from "./DatePicker/DatePicker";
 export * from "./TextArea/TextArea";
+export * from "./ActivityOption/ActivityOption";

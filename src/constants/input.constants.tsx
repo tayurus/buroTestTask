@@ -6,5 +6,5 @@ export const inputConstants = {
 
 // структура, в которой для каждого шага и каждой формы в шаге хранятся имена инпутов, для которых нужно грузить autocomplete-значения
 export const AUTOCOMPLETE_INPUTS = {
-  s1common: ["secondName"]
+  Common: ["secondName"]
 };

@@ -1,5 +1,6 @@
 export * from "./Header/Header";
 export * from "./Footer/Footer";
+export * from "./NavMenu/NavMenu";
 export * from "./Input/Input";
 export * from "./InputNumber/InputNumber";
 export * from "./Steps/Steps";

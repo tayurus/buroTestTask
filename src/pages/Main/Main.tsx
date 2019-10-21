@@ -87,25 +87,20 @@ class Main extends Component<any> {
 }
 
 function mapStateToProps(state: any) {
-  const { currentStep, isStepLoading } = state.form;
-  return {
-    currentStep,
-    isStepLoading
-  };
+  // const { currentStep, isStepLoading } = state.form;
+  // return {
+  //   currentStep,
+  //   isStepLoading
+  // };
 }
-//
-// const mapDispatchToProps = (dispatch: Function) => {
-//   return {
-//     changeStep: () => {
-//       dispatch(formActions.changeStep());
-//       setTimeout(() => dispatch(formActions.stepLoaded()), 2000);
-//     }
-//   };
-// };
+
+const mapDispatchToProps = (dispatch: Function) => {
+  return {};
+};
 
 const connectedComponent = connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Main);
 
 export { connectedComponent as Main };

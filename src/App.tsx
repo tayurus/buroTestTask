@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "./App.scss";
 
-import { Main } from "./pages";
+import { Main, PersonalAccount } from "./pages";
 
 import { Header, Footer } from "./components";
 
@@ -19,6 +19,7 @@ export class App extends Component {
         <Router history={history}>
           <div>
             <Route exact path="/" component={Main} />
+            <Route exact path="/personalAccount" component={PersonalAccount} />
           </div>
         </Router>
 

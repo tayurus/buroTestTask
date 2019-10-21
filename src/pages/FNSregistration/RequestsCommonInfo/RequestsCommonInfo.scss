@@ -1,0 +1,56 @@
+.requests-common-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1165px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  &__title {
+    color: #262626;
+    font-size: 30px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  &__data {
+    display: flex;
+    align-items: center;
+  }
+
+  &__data-wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 24px;
+
+    &_balance {
+      position: relative;
+
+      &:after {
+        content: "";
+        width: 2px;
+        height: 32px;
+        border: 1px solid #000000;
+        opacity: 0.33;
+        margin-left: 24px;
+      }
+
+      .requests-common-info__value {
+        margin-right: 0;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  &__label {
+    font-size: 14px;
+    color: #a3a09a;
+  }
+
+  &__value {
+    font-size: 22px;
+    font-weight: 500;
+    margin-right: 5px;
+  }
+}

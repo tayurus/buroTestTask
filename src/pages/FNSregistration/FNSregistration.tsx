@@ -1,23 +1,31 @@
 import React, { Component } from "react";
 import { withNaming } from "@bem-react/classname";
-import "./PersonalAccount.scss";
+import "./FNSregistration.scss";
 
-import { NavMenu } from "src/components";
 import { connect } from "react-redux";
-import { navMenuItems } from "src/constants";
+
+import { RequestsCommonInfo } from "./RequestsCommonInfo/RequestsCommonInfo";
 
 const cn = withNaming({ n: "", e: "__", m: "_", v: "_" });
-const b = cn("personal-account");
+const b = cn("fns-registration");
 
-class PersonalAccount extends Component<any> {
+class FNSregistration extends Component<any> {
   constructor(props: any) {
     super(props);
   }
 
   render() {
+    const commonInfo = {
+      balance: 400000,
+      total: 2,
+      processing: 6,
+      ended: 8,
+      archive: 1
+    };
+
     return (
       <div className={b()}>
-        <NavMenu navMenuItems={navMenuItems} />
+        <RequestsCommonInfo {...commonInfo} />
       </div>
     );
   }
@@ -34,6 +42,6 @@ const mapDispatchToProps = (dispatch: Function) => {
 const connectedComponent = connect(
   mapStateToProps,
   mapDispatchToProps
-)(PersonalAccount);
+)(FNSregistration);
 
-export { connectedComponent as PersonalAccount };
+export { connectedComponent as FNSregistration };

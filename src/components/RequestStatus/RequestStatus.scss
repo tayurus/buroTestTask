@@ -1,0 +1,29 @@
+.request-status {
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 4px 9px;
+
+  &_orange {
+    color: var(--color-orange);
+    border: 1px solid currentColor;
+    background-color: #fff7e6;
+  }
+
+  &_red {
+    color: var(--color-red);
+    border: 1px solid currentColor;
+    background-color: #fff1f0;
+  }
+
+  &_blue {
+    color: var(--color-orange);
+    border: 1px solid currentColor;
+    background-color: #e6f7ff;
+  }
+
+  &_green {
+    color: var(--color-green);
+    border: 1px solid currentColor;
+    background-color: #f6ffed;
+  }
+}

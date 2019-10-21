@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { withNaming } from "@bem-react/classname";
 import "./FNSregistration.scss";
 
-import { Tabs, Input, Button, Select, Divider } from "antd";
+import { columns } from "src/constants";
+import { Tabs, Input, Button, Select, Table } from "antd";
 import { connect } from "react-redux";
 
 import { RequestsCommonInfo } from "./RequestsCommonInfo/RequestsCommonInfo";
@@ -28,6 +29,10 @@ class FNSregistration extends Component<any> {
     super(props);
   }
 
+  state = {
+    selectedRowKeys: [] // Check here to configure the default column
+  };
+
   handleTabChange = (tabIndex: string) => {
     console.log(tabIndex);
   };
@@ -50,6 +55,24 @@ class FNSregistration extends Component<any> {
         ))}
       </Tabs>
     );
+  };
+
+  renderTable = () => {
+    const data = [];
+    for (let i = 0; i < 46; i++) {
+      data.push({
+        key: i,
+        company: `McDonald's ${i}`,
+        client: `ИП Иванов Иван Иванович ${i}`,
+        INN: Math.floor(Math.random() * 10000000000).toString(),
+        dateCreated: new Date().toLocaleDateString(),
+        phone: "8 800 555 35 35",
+        status: <span>shit</span>,
+        administration: <a>открыть</a>
+      });
+    }
+
+    return <Table className={b("table")} columns={columns} dataSource={data} />;
   };
 
   renderControls = () => {
@@ -96,6 +119,7 @@ class FNSregistration extends Component<any> {
         <div className={b("content")}>
           {this.renderTabs(tabs)}
           {this.renderControls()}
+          {this.renderTable()}
         </div>
       </div>
     );
